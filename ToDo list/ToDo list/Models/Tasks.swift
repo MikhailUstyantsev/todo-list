@@ -8,13 +8,13 @@
 import Foundation
 
 
-struct Tasks: Codable {
+struct Tasks: Codable, Hashable {
     let todos: [Todo]
     let total, skip, limit: Int
 }
 
 
-struct Todo: Codable {
+struct Todo: Codable, Hashable {
     let id: Int
     let todo: String
     let completed: Bool

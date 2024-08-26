@@ -5,13 +5,43 @@
 //  Created by Mikhail Ustyantsev on 24.08.2024.
 //
 
-import Foundation
+import UIKit
 
 enum Constants {
+    
+    
+    enum Color {
+        static let red = UIColor(hexString: "#E62815")
+        static let pink = UIColor(hexString: "#ff7373")
+        static let purpleLight = UIColor(hexString: "#abb5ff")
+        static let purpleIntense = UIColor(hexString: "#5148b2")
+        static let background = UIColor(named: "background")
+    }
+    
     
     enum API {
         static let todosApiString = "https://dummyjson.com/todos"
     }
     
+    
+    enum String {
+        static let homeScreenTitle = "Tasks"
+    }
+    
+    
+    enum Fonts {
+        
+        static func montserratRegular(with size: CGFloat) -> UIFont {
+            UIFont(name: "Montserrat-Regular", size: size) ?? UIFont()
+        }
+        
+        static func montserratMedium(with size: CGFloat) -> UIFont {
+            UIFont(name: "Montserrat-Medium", size: size) ?? UIFont()
+        }
+        
+        static func montserratSemiBold(with size: CGFloat) -> UIFont {
+            UIFont(name: "Montserrat-SemiBold", size: size) ?? UIFont()
+        }
+    }
     
 }
