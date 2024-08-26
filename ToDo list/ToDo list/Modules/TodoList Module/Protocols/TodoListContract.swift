@@ -26,6 +26,8 @@ protocol ViewToPresenterTodoListProtocol {
     func startFetchingTodoList()
     func showTodoListController(navigationController: UINavigationController)
     func showAddNewTaskControllerFrom(viewController: TodoListViewController)
+    func updatePersistense()
+    var todoArray: [Todo] { get set }
 }
 
 
@@ -33,6 +35,7 @@ protocol ViewToPresenterTodoListProtocol {
 protocol PresenterToInteractorTodoListProtocol {
     
     var presenter: InteractorToPresenterTodoListProtocol? { get set }
+    var persistentManager: PersistenceManager { get set }
     func getTasks()
 }
 

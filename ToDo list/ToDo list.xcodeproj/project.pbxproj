@@ -10,6 +10,8 @@
 		833DAB8E2C7CB8C00060C286 /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB8D2C7CB8C00060C286 /* UIColor + Ext.swift */; };
 		833DAB922C7CBED50060C286 /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */; };
 		833DAB942C7CBF270060C286 /* NSCoder + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */; };
+		833DAB972C7CF7420060C286 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB952C7CF7420060C286 /* Goal+CoreDataClass.swift */; };
+		833DAB982C7CF7420060C286 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB962C7CF7420060C286 /* Goal+CoreDataProperties.swift */; };
 		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
 		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
 		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		833DAB8D2C7CB8C00060C286 /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
 		833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCoder + Ext.swift"; sourceTree = "<group>"; };
+		833DAB952C7CF7420060C286 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		833DAB962C7CF7420060C286 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		83B59A502C79037800CA5B7E /* ToDo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B59A532C79037800CA5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B59A552C79037800CA5B7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 		83FFFDA42C7AEF1D00E9469E /* NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
+				833DAB952C7CF7420060C286 /* Goal+CoreDataClass.swift */,
+				833DAB962C7CF7420060C286 /* Goal+CoreDataProperties.swift */,
 			);
 			path = NSManagedObject;
 			sourceTree = "<group>";
@@ -438,6 +444,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833DAB972C7CF7420060C286 /* Goal+CoreDataClass.swift in Sources */,
+				833DAB982C7CF7420060C286 /* Goal+CoreDataProperties.swift in Sources */,
 				83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */,
 				833DAB922C7CBED50060C286 /* AddNewTaskButton.swift in Sources */,
 				83FFFD9A2C7A618C00E9469E /* Network Manager.swift in Sources */,

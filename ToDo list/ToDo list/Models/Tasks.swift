@@ -15,10 +15,10 @@ struct Tasks: Codable, Hashable {
 
 
 struct Todo: Codable, Hashable {
-    let id: Int
+    let id: Int?
     let todo: String
-    let completed: Bool
-    let userID: Int
+    var completed: Bool
+    let userID: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, todo, completed

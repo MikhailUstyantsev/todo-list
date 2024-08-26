@@ -104,6 +104,7 @@ class TodoListViewController: UIViewController {
                     withReuseIdentifier: String(describing: TaskCollectionViewCell.self),
                     for: indexPath) as? TaskCollectionViewCell
                 cell?.task = item
+                cell?.delegate = self
                 return cell
             })
         return dataSource
@@ -147,3 +148,15 @@ extension TodoListViewController: UICollectionViewDelegate {
     }
     
 }
+
+
+extension TodoListViewController: TaskCollectionViewCellDelegate {
+    
+    func updateTaskListWith(_ task: Todo?) {
+        let updated = presenter?.todoArray.map { $0.todo == task?.todo ? task : $0 } as? [Todo]
+        presenter?.todoArray = updated ?? []
+        presenter?.updatePersistense()
+    }
+}
+    
+
