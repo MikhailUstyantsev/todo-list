@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		833DAB8E2C7CB8C00060C286 /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB8D2C7CB8C00060C286 /* UIColor + Ext.swift */; };
+		833DAB922C7CBED50060C286 /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */; };
+		833DAB942C7CBF270060C286 /* NSCoder + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */; };
+		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
+		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
+		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
+		83B59A602C79037900CA5B7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5F2C79037900CA5B7E /* Base */; };
+		83FFFD8E2C79C79F00E9469E /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFD8D2C79C79F00E9469E /* Tasks.swift */; };
+		83FFFD952C7A5E7D00E9469E /* M13Checkbox in Frameworks */ = {isa = PBXBuildFile; productRef = 83FFFD942C7A5E7D00E9469E /* M13Checkbox */; };
+		83FFFD972C7A5F2C00E9469E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFD962C7A5F2C00E9469E /* Constants.swift */; };
+		83FFFD9A2C7A618C00E9469E /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFD992C7A618C00E9469E /* Network Manager.swift */; };
+		83FFFD9D2C7AEC9100E9469E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFD9C2C7AEC9100E9469E /* Utilities.swift */; };
+		83FFFDA02C7AED8D00E9469E /* Persistence Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFD9F2C7AED8D00E9469E /* Persistence Manager.swift */; };
+		83FFFDA32C7AEEC100E9469E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA22C7AEEC100E9469E /* CoreDataStack.swift */; };
+		83FFFDAA2C7AEF4A00E9469E /* TodoListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA52C7AEF4A00E9469E /* TodoListContract.swift */; };
+		83FFFDAB2C7AEF4A00E9469E /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA62C7AEF4A00E9469E /* TodoListPresenter.swift */; };
+		83FFFDAC2C7AEF4A00E9469E /* TodoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA72C7AEF4A00E9469E /* TodoListRouter.swift */; };
+		83FFFDAD2C7AEF4A00E9469E /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA82C7AEF4A00E9469E /* TodoListViewController.swift */; };
+		83FFFDAE2C7AEF4A00E9469E /* TodoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDA92C7AEF4A00E9469E /* TodoListInteractor.swift */; };
+		83FFFDB32C7AF1CC00E9469E /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDB12C7AF1CC00E9469E /* ToDoList.xcdatamodeld */; };
+		83FFFDBB2C7B9CF700E9469E /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDBA2C7B9CF700E9469E /* TaskCollectionViewCell.swift */; };
+		83FFFDBE2C7B9E6E00E9469E /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FFFDBD2C7B9E6E00E9469E /* UIView + Ext.swift */; };
+		83FFFDD32C7BB2BF00E9469E /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC02C7BB2BF00E9469E /* Montserrat-Black.ttf */; };
+		83FFFDD42C7BB2BF00E9469E /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC12C7BB2BF00E9469E /* Montserrat-BlackItalic.ttf */; };
+		83FFFDD52C7BB2BF00E9469E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC22C7BB2BF00E9469E /* Montserrat-Bold.ttf */; };
+		83FFFDD62C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC32C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf */; };
+		83FFFDD72C7BB2BF00E9469E /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC42C7BB2BF00E9469E /* Montserrat-ExtraBold.ttf */; };
+		83FFFDD82C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC52C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf */; };
+		83FFFDD92C7BB2BF00E9469E /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC62C7BB2BF00E9469E /* Montserrat-ExtraLight.ttf */; };
+		83FFFDDA2C7BB2BF00E9469E /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC72C7BB2BF00E9469E /* Montserrat-ExtraLightItalic.ttf */; };
+		83FFFDDB2C7BB2BF00E9469E /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC82C7BB2BF00E9469E /* Montserrat-Italic.ttf */; };
+		83FFFDDC2C7BB2BF00E9469E /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDC92C7BB2BF00E9469E /* Montserrat-Light.ttf */; };
+		83FFFDDD2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCA2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf */; };
+		83FFFDDE2C7BB2BF00E9469E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCB2C7BB2BF00E9469E /* Montserrat-Medium.ttf */; };
+		83FFFDDF2C7BB2BF00E9469E /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCC2C7BB2BF00E9469E /* Montserrat-MediumItalic.ttf */; };
+		83FFFDE02C7BB2BF00E9469E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCD2C7BB2BF00E9469E /* Montserrat-Regular.ttf */; };
+		83FFFDE12C7BB2BF00E9469E /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCE2C7BB2BF00E9469E /* Montserrat-SemiBold.ttf */; };
+		83FFFDE22C7BB2BF00E9469E /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDCF2C7BB2BF00E9469E /* Montserrat-SemiBoldItalic.ttf */; };
+		83FFFDE32C7BB2BF00E9469E /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDD02C7BB2BF00E9469E /* Montserrat-Thin.ttf */; };
+		83FFFDE42C7BB2BF00E9469E /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FFFDD12C7BB2BF00E9469E /* Montserrat-ThinItalic.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		833DAB8D2C7CB8C00060C286 /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
+		833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
+		833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCoder + Ext.swift"; sourceTree = "<group>"; };
+		83B59A502C79037800CA5B7E /* ToDo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B59A532C79037800CA5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83B59A552C79037800CA5B7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		83B59A5C2C79037900CA5B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83B59A5F2C79037900CA5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83B59A612C79037900CA5B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FFFD8D2C79C79F00E9469E /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		83FFFD962C7A5F2C00E9469E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		83FFFD992C7A618C00E9469E /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
+		83FFFD9C2C7AEC9100E9469E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		83FFFD9F2C7AED8D00E9469E /* Persistence Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence Manager.swift"; sourceTree = "<group>"; };
+		83FFFDA22C7AEEC100E9469E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		83FFFDA52C7AEF4A00E9469E /* TodoListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListContract.swift; sourceTree = "<group>"; };
+		83FFFDA62C7AEF4A00E9469E /* TodoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
+		83FFFDA72C7AEF4A00E9469E /* TodoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRouter.swift; sourceTree = "<group>"; };
+		83FFFDA82C7AEF4A00E9469E /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		83FFFDA92C7AEF4A00E9469E /* TodoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractor.swift; sourceTree = "<group>"; };
+		83FFFDB22C7AF1CC00E9469E /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
+		83FFFDBA2C7B9CF700E9469E /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		83FFFDBD2C7B9E6E00E9469E /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		83FFFDC02C7BB2BF00E9469E /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		83FFFDC12C7BB2BF00E9469E /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDC22C7BB2BF00E9469E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		83FFFDC32C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDC42C7BB2BF00E9469E /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		83FFFDC52C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDC62C7BB2BF00E9469E /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		83FFFDC72C7BB2BF00E9469E /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDC82C7BB2BF00E9469E /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		83FFFDC92C7BB2BF00E9469E /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		83FFFDCA2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDCB2C7BB2BF00E9469E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		83FFFDCC2C7BB2BF00E9469E /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDCD2C7BB2BF00E9469E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		83FFFDCE2C7BB2BF00E9469E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		83FFFDCF2C7BB2BF00E9469E /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		83FFFDD02C7BB2BF00E9469E /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		83FFFDD12C7BB2BF00E9469E /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83B59A4D2C79037800CA5B7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FFFD952C7A5E7D00E9469E /* M13Checkbox in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		833DAB8F2C7CBE4F0060C286 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB902C7CBE890060C286 /* Buttons */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		833DAB902C7CBE890060C286 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		83B59A472C79037800CA5B7E = {
+			isa = PBXGroup;
+			children = (
+				83B59A522C79037800CA5B7E /* ToDo list */,
+				83B59A512C79037800CA5B7E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83B59A512C79037800CA5B7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83B59A502C79037800CA5B7E /* ToDo list.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83B59A522C79037800CA5B7E /* ToDo list */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB8F2C7CBE4F0060C286 /* Custom Views */,
+				83FFFDBC2C7B9E5B00E9469E /* Extensions */,
+				83FFFDA12C7AEEA100E9469E /* Core Data */,
+				83FFFD9B2C7AEC7A00E9469E /* Utilities */,
+				83FFFD8F2C79C7C900E9469E /* Resources */,
+				83FFFD8C2C79A41800E9469E /* Services */,
+				83FFFD8B2C79A40300E9469E /* Models */,
+				83FFFDB02C7AF08900E9469E /* Modules */,
+				83FFFD902C79C7F400E9469E /* Application */,
+			);
+			path = "ToDo list";
+			sourceTree = "<group>";
+		};
+		83FFFD8B2C79A40300E9469E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFD8D2C79C79F00E9469E /* Tasks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		83FFFD8C2C79A41800E9469E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFD982C7A5FA900E9469E /* Network */,
+				83FFFD9E2C7AED7000E9469E /* Persistence Manager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		83FFFD8F2C79C7C900E9469E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDBF2C7BB2AE00E9469E /* Fonts */,
+				83B59A5C2C79037900CA5B7E /* Assets.xcassets */,
+				83FFFD962C7A5F2C00E9469E /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		83FFFD902C79C7F400E9469E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				83B59A532C79037800CA5B7E /* AppDelegate.swift */,
+				83B59A552C79037800CA5B7E /* SceneDelegate.swift */,
+				83B59A5E2C79037900CA5B7E /* LaunchScreen.storyboard */,
+				83B59A612C79037900CA5B7E /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		83FFFD982C7A5FA900E9469E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFD992C7A618C00E9469E /* Network Manager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		83FFFD9B2C7AEC7A00E9469E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFD9C2C7AEC9100E9469E /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		83FFFD9E2C7AED7000E9469E /* Persistence Manager */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFD9F2C7AED8D00E9469E /* Persistence Manager.swift */,
+			);
+			path = "Persistence Manager";
+			sourceTree = "<group>";
+		};
+		83FFFDA12C7AEEA100E9469E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDB12C7AF1CC00E9469E /* ToDoList.xcdatamodeld */,
+				83FFFDA42C7AEF1D00E9469E /* NSManagedObject */,
+				83FFFDA22C7AEEC100E9469E /* CoreDataStack.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		83FFFDA42C7AEF1D00E9469E /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		83FFFDAF2C7AEF5400E9469E /* TodoList Module */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDB82C7B014400E9469E /* Protocols */,
+				83FFFDB72C7B013900E9469E /* Presenter */,
+				83FFFDB62C7B013000E9469E /* Router */,
+				83FFFDB42C7B00FE00E9469E /* View */,
+				83FFFDB52C7B011000E9469E /* Interactor */,
+			);
+			path = "TodoList Module";
+			sourceTree = "<group>";
+		};
+		83FFFDB02C7AF08900E9469E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDAF2C7AEF5400E9469E /* TodoList Module */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		83FFFDB42C7B00FE00E9469E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDB92C7B9C1700E9469E /* Components */,
+				83FFFDA82C7AEF4A00E9469E /* TodoListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83FFFDB52C7B011000E9469E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDA92C7AEF4A00E9469E /* TodoListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		83FFFDB62C7B013000E9469E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDA72C7AEF4A00E9469E /* TodoListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		83FFFDB72C7B013900E9469E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDA62C7AEF4A00E9469E /* TodoListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		83FFFDB82C7B014400E9469E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDA52C7AEF4A00E9469E /* TodoListContract.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		83FFFDB92C7B9C1700E9469E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDBA2C7B9CF700E9469E /* TaskCollectionViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		83FFFDBC2C7B9E5B00E9469E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDBD2C7B9E6E00E9469E /* UIView + Ext.swift */,
+				833DAB8D2C7CB8C00060C286 /* UIColor + Ext.swift */,
+				833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83FFFDBF2C7BB2AE00E9469E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDD22C7BB2BF00E9469E /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		83FFFDD22C7BB2BF00E9469E /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				83FFFDC02C7BB2BF00E9469E /* Montserrat-Black.ttf */,
+				83FFFDC12C7BB2BF00E9469E /* Montserrat-BlackItalic.ttf */,
+				83FFFDC22C7BB2BF00E9469E /* Montserrat-Bold.ttf */,
+				83FFFDC32C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf */,
+				83FFFDC42C7BB2BF00E9469E /* Montserrat-ExtraBold.ttf */,
+				83FFFDC52C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf */,
+				83FFFDC62C7BB2BF00E9469E /* Montserrat-ExtraLight.ttf */,
+				83FFFDC72C7BB2BF00E9469E /* Montserrat-ExtraLightItalic.ttf */,
+				83FFFDC82C7BB2BF00E9469E /* Montserrat-Italic.ttf */,
+				83FFFDC92C7BB2BF00E9469E /* Montserrat-Light.ttf */,
+				83FFFDCA2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf */,
+				83FFFDCB2C7BB2BF00E9469E /* Montserrat-Medium.ttf */,
+				83FFFDCC2C7BB2BF00E9469E /* Montserrat-MediumItalic.ttf */,
+				83FFFDCD2C7BB2BF00E9469E /* Montserrat-Regular.ttf */,
+				83FFFDCE2C7BB2BF00E9469E /* Montserrat-SemiBold.ttf */,
+				83FFFDCF2C7BB2BF00E9469E /* Montserrat-SemiBoldItalic.ttf */,
+				83FFFDD02C7BB2BF00E9469E /* Montserrat-Thin.ttf */,
+				83FFFDD12C7BB2BF00E9469E /* Montserrat-ThinItalic.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83B59A4F2C79037800CA5B7E /* ToDo list */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83B59A642C79037900CA5B7E /* Build configuration list for PBXNativeTarget "ToDo list" */;
+			buildPhases = (
+				83B59A4C2C79037800CA5B7E /* Sources */,
+				83B59A4D2C79037800CA5B7E /* Frameworks */,
+				83B59A4E2C79037800CA5B7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ToDo list";
+			packageProductDependencies = (
+				83FFFD942C7A5E7D00E9469E /* M13Checkbox */,
+			);
+			productName = "ToDo list";
+			productReference = 83B59A502C79037800CA5B7E /* ToDo list.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83B59A482C79037800CA5B7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					83B59A4F2C79037800CA5B7E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 83B59A4B2C79037800CA5B7E /* Build configuration list for PBXProject "ToDo list" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83B59A472C79037800CA5B7E;
+			packageReferences = (
+				83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */,
+			);
+			productRefGroup = 83B59A512C79037800CA5B7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83B59A4F2C79037800CA5B7E /* ToDo list */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83B59A4E2C79037800CA5B7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FFFDE22C7BB2BF00E9469E /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				83FFFDE02C7BB2BF00E9469E /* Montserrat-Regular.ttf in Resources */,
+				83FFFDDC2C7BB2BF00E9469E /* Montserrat-Light.ttf in Resources */,
+				83FFFDD62C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf in Resources */,
+				83FFFDDD2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf in Resources */,
+				83FFFDE32C7BB2BF00E9469E /* Montserrat-Thin.ttf in Resources */,
+				83FFFDD82C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				83FFFDDB2C7BB2BF00E9469E /* Montserrat-Italic.ttf in Resources */,
+				83FFFDD52C7BB2BF00E9469E /* Montserrat-Bold.ttf in Resources */,
+				83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */,
+				83FFFDD92C7BB2BF00E9469E /* Montserrat-ExtraLight.ttf in Resources */,
+				83FFFDD42C7BB2BF00E9469E /* Montserrat-BlackItalic.ttf in Resources */,
+				83B59A602C79037900CA5B7E /* Base in Resources */,
+				83FFFDDF2C7BB2BF00E9469E /* Montserrat-MediumItalic.ttf in Resources */,
+				83FFFDE42C7BB2BF00E9469E /* Montserrat-ThinItalic.ttf in Resources */,
+				83FFFDDE2C7BB2BF00E9469E /* Montserrat-Medium.ttf in Resources */,
+				83FFFDE12C7BB2BF00E9469E /* Montserrat-SemiBold.ttf in Resources */,
+				83FFFDDA2C7BB2BF00E9469E /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				83FFFDD72C7BB2BF00E9469E /* Montserrat-ExtraBold.ttf in Resources */,
+				83FFFDD32C7BB2BF00E9469E /* Montserrat-Black.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83B59A4C2C79037800CA5B7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */,
+				833DAB922C7CBED50060C286 /* AddNewTaskButton.swift in Sources */,
+				83FFFD9A2C7A618C00E9469E /* Network Manager.swift in Sources */,
+				83FFFDBE2C7B9E6E00E9469E /* UIView + Ext.swift in Sources */,
+				833DAB8E2C7CB8C00060C286 /* UIColor + Ext.swift in Sources */,
+				83FFFD9D2C7AEC9100E9469E /* Utilities.swift in Sources */,
+				83FFFDBB2C7B9CF700E9469E /* TaskCollectionViewCell.swift in Sources */,
+				83FFFDA02C7AED8D00E9469E /* Persistence Manager.swift in Sources */,
+				83FFFDA32C7AEEC100E9469E /* CoreDataStack.swift in Sources */,
+				83FFFDAA2C7AEF4A00E9469E /* TodoListContract.swift in Sources */,
+				83FFFDAB2C7AEF4A00E9469E /* TodoListPresenter.swift in Sources */,
+				83FFFDAC2C7AEF4A00E9469E /* TodoListRouter.swift in Sources */,
+				83FFFDAD2C7AEF4A00E9469E /* TodoListViewController.swift in Sources */,
+				83FFFDAE2C7AEF4A00E9469E /* TodoListInteractor.swift in Sources */,
+				83FFFD8E2C79C79F00E9469E /* Tasks.swift in Sources */,
+				83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */,
+				833DAB942C7CBF270060C286 /* NSCoder + Ext.swift in Sources */,
+				83FFFD972C7A5F2C00E9469E /* Constants.swift in Sources */,
+				83FFFDB32C7AF1CC00E9469E /* ToDoList.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		83B59A5E2C79037900CA5B7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B59A5F2C79037900CA5B7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83B59A622C79037900CA5B7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83B59A632C79037900CA5B7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83B59A652C79037900CA5B7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2R32CKST38;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ToDo list/Application/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mikhail.ustyantsev.ToDo-list";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83B59A662C79037900CA5B7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2R32CKST38;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ToDo list/Application/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mikhail.ustyantsev.ToDo-list";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83B59A4B2C79037800CA5B7E /* Build configuration list for PBXProject "ToDo list" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83B59A622C79037900CA5B7E /* Debug */,
+				83B59A632C79037900CA5B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83B59A642C79037900CA5B7E /* Build configuration list for PBXNativeTarget "ToDo list" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83B59A652C79037900CA5B7E /* Debug */,
+				83B59A662C79037900CA5B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Marxon13/M13Checkbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83FFFD942C7A5E7D00E9469E /* M13Checkbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */;
+			productName = M13Checkbox;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		83FFFDB12C7AF1CC00E9469E /* ToDoList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				83FFFDB22C7AF1CC00E9469E /* ToDoList.xcdatamodel */,
+			);
+			currentVersion = 83FFFDB22C7AF1CC00E9469E /* ToDoList.xcdatamodel */;
+			path = ToDoList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 83B59A482C79037800CA5B7E /* Project object */;
+}

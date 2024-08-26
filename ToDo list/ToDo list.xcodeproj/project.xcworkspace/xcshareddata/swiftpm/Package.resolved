@@ -1,0 +1,15 @@
+{
+  "originHash" : "bbb7b3cb6c556a5d6b770a5f3f24df9e3ed55d7d886b9bd9399348c6d4839958",
+  "pins" : [
+    {
+      "identity" : "m13checkbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Marxon13/M13Checkbox.git",
+      "state" : {
+        "revision" : "96ff6c8862db87095315480a56dcebe51e15dac8",
+        "version" : "3.4.1"
+      }
+    }
+  ],
+  "version" : 3
+}
