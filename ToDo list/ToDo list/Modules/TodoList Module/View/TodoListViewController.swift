@@ -70,7 +70,13 @@ class TodoListViewController: UIViewController {
             addNewTaskButton.widthAnchor.constraint(equalTo: addNewTaskButton.heightAnchor),
             addNewTaskButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10)
         ])
+        addNewTaskButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
+    
+    
+    @objc func addTapped() {
+            presenter?.showAddNewTaskControllerFrom(viewController: self)
+        }
     
     
     private func generateLayout() -> UICollectionViewLayout {
@@ -78,12 +84,12 @@ class TodoListViewController: UIViewController {
         
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60))
+            heightDimension: .estimated(80))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60))
+            heightDimension: .estimated(80))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -123,7 +129,7 @@ extension TodoListViewController: PresenterToViewTodoListProtocol {
     // MARK: - Implementing View Output Methods
     
     func refreshList() {
-        
+        presenter?.startFetchingTodoList()
     }
     
     

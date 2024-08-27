@@ -26,6 +26,10 @@ enum Constants {
     
     enum String {
         static let homeScreenTitle = "Tasks"
+        static let addNewTask = "Add New Task"
+        static let add = "Add"
+        static let error = "Error"
+        static let fillOutTheForm = "Please fill out the form"
     }
     
     

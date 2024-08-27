@@ -29,11 +29,11 @@ final class PersistenceManager {
     
     
     func addNewTask(newTask: Todo) {
-        // - TODO: Refactor to deal with Goal entities
-//        var todoList = self.getExistingTasks()
-//        todoList.append(newTask)
-//        
-//        saveTasks(todoList: todoList)
+        var todoList = self.getExistingTasks()
+        if let goal = createGoalEntityFrom(newTask) as? Goal {
+            todoList.append(goal)
+        }
+        coreDataStack.saveContext()
     }
     
     

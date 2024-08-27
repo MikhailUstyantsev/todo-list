@@ -12,6 +12,11 @@
 		833DAB942C7CBF270060C286 /* NSCoder + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */; };
 		833DAB972C7CF7420060C286 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB952C7CF7420060C286 /* Goal+CoreDataClass.swift */; };
 		833DAB982C7CF7420060C286 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB962C7CF7420060C286 /* Goal+CoreDataProperties.swift */; };
+		833DAB9F2C7E04350060C286 /* AddTaskContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9A2C7E04350060C286 /* AddTaskContract.swift */; };
+		833DABA02C7E04350060C286 /* AddTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9B2C7E04350060C286 /* AddTaskPresenter.swift */; };
+		833DABA12C7E04350060C286 /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */; };
+		833DABA22C7E04350060C286 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */; };
+		833DABA32C7E04350060C286 /* AddTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */; };
 		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
 		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
 		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
@@ -57,6 +62,11 @@
 		833DAB932C7CBF270060C286 /* NSCoder + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCoder + Ext.swift"; sourceTree = "<group>"; };
 		833DAB952C7CF7420060C286 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		833DAB962C7CF7420060C286 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		833DAB9A2C7E04350060C286 /* AddTaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskContract.swift; sourceTree = "<group>"; };
+		833DAB9B2C7E04350060C286 /* AddTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPresenter.swift; sourceTree = "<group>"; };
+		833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskRouter.swift; sourceTree = "<group>"; };
+		833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskInteractor.swift; sourceTree = "<group>"; };
 		83B59A502C79037800CA5B7E /* ToDo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B59A532C79037800CA5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B59A552C79037800CA5B7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +133,58 @@
 				833DAB912C7CBED50060C286 /* AddNewTaskButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		833DAB992C7E04070060C286 /* AddTask Module */ = {
+			isa = PBXGroup;
+			children = (
+				833DABA42C7E064C0060C286 /* Protocols */,
+				833DABA52C7E06560060C286 /* Presenter */,
+				833DABA62C7E06600060C286 /* Router */,
+				833DABA72C7E06690060C286 /* View */,
+				833DABA82C7E066F0060C286 /* Interactor */,
+			);
+			path = "AddTask Module";
+			sourceTree = "<group>";
+		};
+		833DABA42C7E064C0060C286 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB9A2C7E04350060C286 /* AddTaskContract.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		833DABA52C7E06560060C286 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB9B2C7E04350060C286 /* AddTaskPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		833DABA62C7E06600060C286 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		833DABA72C7E06690060C286 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		833DABA82C7E066F0060C286 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		83B59A472C79037800CA5B7E = {
@@ -253,6 +315,7 @@
 		83FFFDB02C7AF08900E9469E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				833DAB992C7E04070060C286 /* AddTask Module */,
 				83FFFDAF2C7AEF5400E9469E /* TodoList Module */,
 			);
 			path = Modules;
@@ -452,6 +515,11 @@
 				83FFFDBE2C7B9E6E00E9469E /* UIView + Ext.swift in Sources */,
 				833DAB8E2C7CB8C00060C286 /* UIColor + Ext.swift in Sources */,
 				83FFFD9D2C7AEC9100E9469E /* Utilities.swift in Sources */,
+				833DAB9F2C7E04350060C286 /* AddTaskContract.swift in Sources */,
+				833DABA02C7E04350060C286 /* AddTaskPresenter.swift in Sources */,
+				833DABA12C7E04350060C286 /* AddTaskRouter.swift in Sources */,
+				833DABA22C7E04350060C286 /* AddTaskViewController.swift in Sources */,
+				833DABA32C7E04350060C286 /* AddTaskInteractor.swift in Sources */,
 				83FFFDBB2C7B9CF700E9469E /* TaskCollectionViewCell.swift in Sources */,
 				83FFFDA02C7AED8D00E9469E /* Persistence Manager.swift in Sources */,
 				83FFFDA32C7AEEC100E9469E /* CoreDataStack.swift in Sources */,

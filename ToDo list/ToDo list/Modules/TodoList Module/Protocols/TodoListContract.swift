@@ -24,10 +24,11 @@ protocol ViewToPresenterTodoListProtocol {
     var interactor: PresenterToInteractorTodoListProtocol? { get set }
     var router: PresenterToRouterTodoListProtocol? { get set }
     func startFetchingTodoList()
-    func showTodoListController(navigationController: UINavigationController)
-    func showAddNewTaskControllerFrom(viewController: TodoListViewController)
     func updatePersistense()
     var todoArray: [Todo] { get set }
+    
+    func showTodoListController(navigationController: UINavigationController)
+    func showAddNewTaskControllerFrom(viewController: TodoListViewController)
 }
 
 

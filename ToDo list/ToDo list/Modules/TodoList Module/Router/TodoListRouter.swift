@@ -35,8 +35,8 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
     
     
     func presentAddTaskScreen(fromViewController: TodoListViewController) {
-//        let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
-//        router.presentToAddTaskScreen(fromViewController: fromViewController)
+        let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
+        router.presentToAddTaskScreen(fromViewController: fromViewController)
     }
     
 }
