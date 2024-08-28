@@ -17,7 +17,11 @@
 		833DABA12C7E04350060C286 /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */; };
 		833DABA22C7E04350060C286 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */; };
 		833DABA32C7E04350060C286 /* AddTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */; };
-		833DABAB2C7EF7040060C286 /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 833DABAA2C7EF7040060C286 /* SwipeCellKit */; };
+		833DABAF2C7F06ED0060C286 /* ErrorHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABAC2C7F06ED0060C286 /* ErrorHud.swift */; };
+		833DABB02C7F06ED0060C286 /* SuccessHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABAD2C7F06ED0060C286 /* SuccessHud.swift */; };
+		833DABB32C7F0EAB0060C286 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABB22C7F0EAB0060C286 /* Functions.swift */; };
+		833DABB62C7F23E80060C286 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 833DABB52C7F23E80060C286 /* loader.json */; };
+		833DABB92C7F24B30060C286 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 833DABB82C7F24B30060C286 /* Lottie */; };
 		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
 		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
 		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskRouter.swift; sourceTree = "<group>"; };
 		833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskInteractor.swift; sourceTree = "<group>"; };
+		833DABAC2C7F06ED0060C286 /* ErrorHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHud.swift; sourceTree = "<group>"; };
+		833DABAD2C7F06ED0060C286 /* SuccessHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessHud.swift; sourceTree = "<group>"; };
+		833DABB22C7F0EAB0060C286 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		833DABB52C7F23E80060C286 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		83B59A502C79037800CA5B7E /* ToDo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B59A532C79037800CA5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B59A552C79037800CA5B7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,8 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833DABAB2C7EF7040060C286 /* SwipeCellKit in Frameworks */,
 				83FFFD952C7A5E7D00E9469E /* M13Checkbox in Frameworks */,
+				833DABB92C7F24B30060C286 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +132,7 @@
 		833DAB8F2C7CBE4F0060C286 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				833DABAE2C7F06ED0060C286 /* HUD */,
 				833DAB902C7CBE890060C286 /* Buttons */,
 			);
 			path = "Custom Views";
@@ -149,6 +158,23 @@
 			path = "AddTask Module";
 			sourceTree = "<group>";
 		};
+		833DABAE2C7F06ED0060C286 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				833DABAC2C7F06ED0060C286 /* ErrorHud.swift */,
+				833DABAD2C7F06ED0060C286 /* SuccessHud.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		833DABB42C7F23200060C286 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				833DABB52C7F23E80060C286 /* loader.json */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		83B59A472C79037800CA5B7E = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +194,7 @@
 		83B59A522C79037800CA5B7E /* ToDo list */ = {
 			isa = PBXGroup;
 			children = (
+				833DABB42C7F23200060C286 /* Supporting Files */,
 				833DAB8F2C7CBE4F0060C286 /* Custom Views */,
 				83FFFDBC2C7B9E5B00E9469E /* Extensions */,
 				83FFFDA12C7AEEA100E9469E /* Core Data */,
@@ -230,6 +257,7 @@
 		83FFFD9B2C7AEC7A00E9469E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				833DABB22C7F0EAB0060C286 /* Functions.swift */,
 				83FFFD9C2C7AEC9100E9469E /* Utilities.swift */,
 			);
 			path = Utilities;
@@ -353,7 +381,7 @@
 			name = "ToDo list";
 			packageProductDependencies = (
 				83FFFD942C7A5E7D00E9469E /* M13Checkbox */,
-				833DABAA2C7EF7040060C286 /* SwipeCellKit */,
+				833DABB82C7F24B30060C286 /* Lottie */,
 			);
 			productName = "ToDo list";
 			productReference = 83B59A502C79037800CA5B7E /* ToDo list.app */;
@@ -385,7 +413,7 @@
 			mainGroup = 83B59A472C79037800CA5B7E;
 			packageReferences = (
 				83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */,
-				833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
+				833DABB72C7F24B30060C286 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 83B59A512C79037800CA5B7E /* Products */;
 			projectDirPath = "";
@@ -406,6 +434,7 @@
 				83FFFDDC2C7BB2BF00E9469E /* Montserrat-Light.ttf in Resources */,
 				83FFFDD62C7BB2BF00E9469E /* Montserrat-BoldItalic.ttf in Resources */,
 				83FFFDDD2C7BB2BF00E9469E /* Montserrat-LightItalic.ttf in Resources */,
+				833DABB62C7F23E80060C286 /* loader.json in Resources */,
 				83FFFDE32C7BB2BF00E9469E /* Montserrat-Thin.ttf in Resources */,
 				83FFFDD82C7BB2BF00E9469E /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				83FFFDDB2C7BB2BF00E9469E /* Montserrat-Italic.ttf in Resources */,
@@ -435,10 +464,13 @@
 				833DAB982C7CF7420060C286 /* Goal+CoreDataProperties.swift in Sources */,
 				83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */,
 				833DAB922C7CBED50060C286 /* AddNewTaskButton.swift in Sources */,
+				833DABAF2C7F06ED0060C286 /* ErrorHud.swift in Sources */,
 				83FFFD9A2C7A618C00E9469E /* Network Manager.swift in Sources */,
 				83FFFDBE2C7B9E6E00E9469E /* UIView + Ext.swift in Sources */,
+				833DABB32C7F0EAB0060C286 /* Functions.swift in Sources */,
 				833DAB8E2C7CB8C00060C286 /* UIColor + Ext.swift in Sources */,
 				83FFFD9D2C7AEC9100E9469E /* Utilities.swift in Sources */,
+				833DABB02C7F06ED0060C286 /* SuccessHud.swift in Sources */,
 				833DAB9F2C7E04350060C286 /* AddTaskContract.swift in Sources */,
 				833DABA02C7E04350060C286 /* AddTaskPresenter.swift in Sources */,
 				833DABA12C7E04350060C286 /* AddTaskRouter.swift in Sources */,
@@ -679,12 +711,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+		833DABB72C7F24B30060C286 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.1;
+				minimumVersion = 4.5.0;
 			};
 		};
 		83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */ = {
@@ -698,10 +730,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		833DABAA2C7EF7040060C286 /* SwipeCellKit */ = {
+		833DABB82C7F24B30060C286 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
-			productName = SwipeCellKit;
+			package = 833DABB72C7F24B30060C286 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		83FFFD942C7A5E7D00E9469E /* M13Checkbox */ = {
 			isa = XCSwiftPackageProductDependency;

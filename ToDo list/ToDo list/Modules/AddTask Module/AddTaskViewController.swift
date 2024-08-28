@@ -19,7 +19,7 @@ final class AddTaskViewController: UIViewController {
         textView.layer.cornerRadius = 10
         textView.backgroundColor = .secondarySystemBackground
         textView.font = Constants.Fonts.montserratMedium(with: 20)
-        textView.textContainer.lineFragmentPadding = 10
+        textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         return textView
@@ -108,7 +108,20 @@ final class AddTaskViewController: UIViewController {
 }
 
 extension AddTaskViewController: PresenterToViewAddTaskProtocol{
-    // TODO: Implement View Output Methods
+    
+    func showAddTaskSuccess() {
+        let hudView = SuccessHud.hud(inView: view, animated: true)
+        hudView.text = "Saved"
+        afterDelay(1.5) {
+            hudView.hide()
+        }
+    }
+    
+    
+    func showAddTaskFailed(message: String) {
+        
+    }
+    
 }
 
 

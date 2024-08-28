@@ -19,6 +19,7 @@ class TodoListInteractor: PresenterToInteractorTodoListProtocol {
     }
     
     func getTasks() {
+        presenter?.showLoader()
         let taskList = persistentManager.getExistingTasks()
         let todosArray = taskList.map { createTodoItemFrom($0) }
         
@@ -33,12 +34,15 @@ class TodoListInteractor: PresenterToInteractorTodoListProtocol {
                 guard let tasks else { return }
                 presenter?.todoListFetchedSuccess(todoListModelArray: tasks.todos)
                 persistentManager.saveTasks(todoList: tasks.todos)
+                presenter?.hideLoader()
             }
-            
+           
         } else if taskList.count > 0 {
             self.presenter?.todoListFetchedSuccess(todoListModelArray: todosArray)
+            presenter?.hideLoader()
         } else {
             self.presenter?.todoListFetchFailed()
+            presenter?.hideLoader()
         }
     }
     

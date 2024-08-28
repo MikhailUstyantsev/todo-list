@@ -31,8 +31,11 @@ class AddTaskPresenter: ViewToPresenterAddTaskProtocol {
 extension AddTaskPresenter: InteractorToPresenterAddTaskProtocol {
     
     func addNewTaskSuccess() {
-        router?.closeAddTaskScreen()
-        todoListView?.refreshList()
+        view?.showAddTaskSuccess()
+        afterDelay(1.5) { [weak self] in
+            self?.router?.closeAddTaskScreen()
+            self?.todoListView?.refreshList()
+        }
     }
     
     func addNewTaskFailed(message: String) {
