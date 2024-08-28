@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class TodoListViewController: UIViewController {
     
@@ -28,6 +29,8 @@ class TodoListViewController: UIViewController {
     private lazy var collectionDataSource = makeDataSource()
     let addNewTaskButton = AddNewTaskButton(backgroundColor: Constants.Color.purpleIntense, foregroundColor: .white)
     private lazy var margins = view.safeAreaLayoutGuide
+    private var animationView = LottieAnimationView(name: "loader")
+    
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -35,7 +38,23 @@ class TodoListViewController: UIViewController {
         configureViewController()
         configureCollectionView()
         configureAddNewTaskButton()
+        configureLoader()
         presenter?.startFetchingTodoList()
+      
+    }
+    
+    
+    private func configureLoader() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.8
+        collectionView.addView(animationView)
+        NSLayoutConstraint.activate([
+            animationView.heightAnchor.constraint(equalToConstant: 80),
+            animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor),
+            animationView.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor),
+            animationView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+        ])
     }
     
     
@@ -127,6 +146,19 @@ class TodoListViewController: UIViewController {
 
 extension TodoListViewController: PresenterToViewTodoListProtocol {
     // MARK: - Implementing View Output Methods
+    
+    func playLoader() {
+        animationView.play()
+    }
+    
+    
+    func stopLoader() {
+        animationView.stop()
+        DispatchQueue.main.async { [weak self] in
+            self?.animationView.removeFromSuperview()
+        }
+    }
+    
     
     func refreshList() {
         presenter?.startFetchingTodoList()

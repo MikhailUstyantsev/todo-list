@@ -11,7 +11,8 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewAddTaskProtocol {
-   
+    func showAddTaskSuccess()
+    func showAddTaskFailed(message: String)
 }
 
 

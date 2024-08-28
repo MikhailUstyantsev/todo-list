@@ -41,6 +41,16 @@ class TodoListPresenter: ViewToPresenterTodoListProtocol {
 extension TodoListPresenter: InteractorToPresenterTodoListProtocol {
     
     
+    func showLoader() {
+        view?.playLoader()
+    }
+    
+    
+    func hideLoader() {
+        view?.stopLoader()
+    }
+        
+    
     func todoListFetchedSuccess(todoListModelArray: [Todo]) {
         todoArray = todoListModelArray
         view?.showTodoList(todoArray: todoListModelArray)

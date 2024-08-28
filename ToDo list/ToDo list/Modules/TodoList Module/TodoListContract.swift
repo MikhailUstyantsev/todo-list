@@ -14,6 +14,8 @@ protocol PresenterToViewTodoListProtocol {
     func refreshList()
     func showTodoList(todoArray: [Todo])
     func showError()
+    func playLoader()
+    func stopLoader()
 }
 
 
@@ -45,6 +47,8 @@ protocol PresenterToInteractorTodoListProtocol {
 protocol InteractorToPresenterTodoListProtocol {
     func todoListFetchedSuccess(todoListModelArray: [Todo])
     func todoListFetchFailed()
+    func showLoader()
+    func hideLoader()
 }
 
 

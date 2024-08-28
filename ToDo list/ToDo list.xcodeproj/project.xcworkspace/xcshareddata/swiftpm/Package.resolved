@@ -1,6 +1,15 @@
 {
-  "originHash" : "4060699e7de563fdcf93aa8fc188e95a7fc22f442833a1baf57243d201fac8f6",
+  "originHash" : "f91e6e493dae0c7981a9ac97fbea6d1c660f5ac52999676106b32684e6e75263",
   "pins" : [
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "fe4c6fe3a0aa66cdeb51d549623c82ca9704b9a5",
+        "version" : "4.5.0"
+      }
+    },
     {
       "identity" : "m13checkbox",
       "kind" : "remoteSourceControl",
@@ -8,15 +17,6 @@
       "state" : {
         "revision" : "96ff6c8862db87095315480a56dcebe51e15dac8",
         "version" : "3.4.1"
-      }
-    },
-    {
-      "identity" : "swipecellkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwipeCellKit/SwipeCellKit",
-      "state" : {
-        "revision" : "7219cad3098637176ace311510d11467dbfb9bb0",
-        "version" : "2.7.1"
       }
     }
   ],
