@@ -21,7 +21,8 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
         viewController.presenter = presenter
         viewController.presenter?.router = TodoListRouter()
         viewController.presenter?.view = viewController
-        viewController.presenter?.interactor = TodoListInteractor()
+        let persistenceManager = PersistenceManager()
+        viewController.presenter?.interactor = TodoListInteractor(persistentManager: persistenceManager)
         viewController.presenter?.interactor?.presenter = presenter
         
         return viewController
@@ -34,8 +35,8 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
     
     
     func presentAddTaskScreen(fromViewController: TodoListViewController) {
-//        let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
-//        router.presentToAddTaskScreen(fromViewController: fromViewController)
+        let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
+        router.presentToAddTaskScreen(fromViewController: fromViewController)
     }
     
 }

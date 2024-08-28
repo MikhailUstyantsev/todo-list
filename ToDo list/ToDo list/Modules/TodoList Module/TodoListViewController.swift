@@ -70,7 +70,13 @@ class TodoListViewController: UIViewController {
             addNewTaskButton.widthAnchor.constraint(equalTo: addNewTaskButton.heightAnchor),
             addNewTaskButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10)
         ])
+        addNewTaskButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
+    
+    
+    @objc func addTapped() {
+            presenter?.showAddNewTaskControllerFrom(viewController: self)
+        }
     
     
     private func generateLayout() -> UICollectionViewLayout {
@@ -78,12 +84,12 @@ class TodoListViewController: UIViewController {
         
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60))
+            heightDimension: .estimated(80))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60))
+            heightDimension: .estimated(80))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -104,6 +110,7 @@ class TodoListViewController: UIViewController {
                     withReuseIdentifier: String(describing: TaskCollectionViewCell.self),
                     for: indexPath) as? TaskCollectionViewCell
                 cell?.task = item
+                cell?.delegate = self
                 return cell
             })
         return dataSource
@@ -122,7 +129,7 @@ extension TodoListViewController: PresenterToViewTodoListProtocol {
     // MARK: - Implementing View Output Methods
     
     func refreshList() {
-        
+        presenter?.startFetchingTodoList()
     }
     
     
@@ -143,7 +150,33 @@ extension TodoListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionDataSource.itemIdentifier(for: indexPath) else { return }
-        print(item.todo)
+        Utilities.showDeleteSheet(
+            strTitle: "Do you want to delete: \(item.todo)?",
+            strMessage: nil,
+            parent: self,
+            DeleteButtonTitle: nil,
+            CancelButtonTitle: Constants.String.cancel,
+            deleteBlock: { [weak self] in
+                let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
+                self?.presenter?.todoArray = updated ?? []
+                self?.presenter?.updatePersistense()
+                self?.refreshList()
+            },
+            cancelBlock: nil
+        )
+        
     }
     
 }
+
+
+extension TodoListViewController: TaskCollectionViewCellDelegate {
+    
+    func updateTaskListWith(_ task: Todo?) {
+        let updated = presenter?.todoArray.map { $0.todo == task?.todo ? task : $0 } as? [Todo]
+        presenter?.todoArray = updated ?? []
+        presenter?.updatePersistense()
+    }
+}
+    
+

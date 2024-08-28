@@ -8,6 +8,12 @@
 import UIKit
 import M13Checkbox
 
+
+protocol TaskCollectionViewCellDelegate: AnyObject {
+    func updateTaskListWith(_ task: Todo?)
+}
+
+
 class TaskCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
@@ -38,17 +44,24 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var task: Todo? {
         didSet {
-            switch checkBox.checkState {
-            case .unchecked:
-                taskLabel.text = task?.todo
-            case .checked:
-                taskLabel.attributedText = strikeText(strike: task?.todo ?? "unknown")
-            case .mixed:
-                break
+            if task?.completed == true {
+                checkBox.setCheckState(.checked, animated: false)
+            } else {
+                checkBox.setCheckState(.unchecked, animated: false)
             }
             
+            switch checkBox.checkState {
+            case .unchecked:
+                taskLabel.attributedText = NSAttributedString(string: task?.todo ?? "unknown")
+            case .checked:
+                taskLabel.attributedText = strikeText(strike: task?.todo ?? "unknown")
+            default:
+                break
+            }
         }
     }
+    var delegate: TaskCollectionViewCellDelegate?
+    
     
     
     override init(frame: CGRect) {
@@ -62,6 +75,11 @@ class TaskCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("Interface Builder is not supported!")
+    }
+    
+    
+    override func prepareForReuse() {
+        task = nil
     }
     
     
@@ -81,11 +99,20 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     
     @objc private func tapOnCheckbox() {
-        if checkBox.checkState == .checked {
-            taskLabel.attributedText = strikeText(strike: task?.todo ?? "unknown")
-        } else {
-            taskLabel.attributedText = NSAttributedString(string: task?.todo ?? "unknown")
+        guard let task else { return }
+        switch checkBox.checkState {
+        case .unchecked:
+            taskLabel.attributedText = NSAttributedString(string: task.todo)
+            self.task?.completed = false
+            delegate?.updateTaskListWith(self.task)
+        case .checked:
+            taskLabel.attributedText = strikeText(strike: task.todo)
+            self.task?.completed = true
+            delegate?.updateTaskListWith(self.task)
+        case .mixed:
+            break
         }
+        
     }
     
     

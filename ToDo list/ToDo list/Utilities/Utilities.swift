@@ -42,7 +42,7 @@ final class Utilities {
     {
         let alert = UIAlertController(title: strTitle, message: (strMessage ?? ""), preferredStyle: .alert)
         
-        let OKAction = UIAlertAction(title: (OKButtonTitle ?? "Okay"), style: .default) { (action:UIAlertAction!) in
+        let OKAction = UIAlertAction(title: (OKButtonTitle ?? "Ok"), style: .default) { (action:UIAlertAction!) in
             if (okBlock != nil) {
                 okBlock!()
             }
@@ -50,7 +50,7 @@ final class Utilities {
         alert.addAction(OKAction)
         
         if CancelButtonTitle != nil {
-            let CancelAction = UIAlertAction(title: CancelButtonTitle, style: .default) { (action:UIAlertAction!) in
+            let CancelAction = UIAlertAction(title: CancelButtonTitle, style: .cancel) { (action:UIAlertAction!) in
                 if (cancelBlock != nil) {
                     cancelBlock!()
                 }
@@ -63,4 +63,35 @@ final class Utilities {
     }
     
     
+    static func showDeleteSheet(
+        strTitle: String,
+        strMessage: String?,
+        parent: AnyObject,
+        DeleteButtonTitle: String? ,
+        CancelButtonTitle: String?,
+        deleteBlock : (() -> Void)?,
+        cancelBlock : (() -> Void)?
+    )
+    {
+        let alert = UIAlertController(title: strTitle, message: (strMessage ?? ""), preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: DeleteButtonTitle ?? "Delete", style: .destructive) { (action: UIAlertAction!) in
+            if (deleteBlock != nil) {
+                deleteBlock!()
+            }
+        }
+        alert.addAction(deleteAction)
+        
+        if CancelButtonTitle != nil {
+            let CancelAction = UIAlertAction(title: CancelButtonTitle, style: .cancel) { (action:UIAlertAction!) in
+                if (cancelBlock != nil) {
+                    cancelBlock!()
+                }
+            }
+            alert.addAction(CancelAction)
+        }
+        
+        parent.present(alert, animated: true, completion: nil)
+        
+    }
 }

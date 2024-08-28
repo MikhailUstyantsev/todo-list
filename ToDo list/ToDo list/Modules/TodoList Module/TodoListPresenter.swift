@@ -9,6 +9,8 @@
 import UIKit
 
 class TodoListPresenter: ViewToPresenterTodoListProtocol {
+    
+    var todoArray: [Todo] = [] 
 
     // MARK: Properties
     var view: PresenterToViewTodoListProtocol?
@@ -21,9 +23,13 @@ class TodoListPresenter: ViewToPresenterTodoListProtocol {
     }
     
     
+    func updatePersistense() {
+        interactor?.persistentManager.saveTasks(todoList: todoArray)
+    }
+    
     
     func showTodoListController(navigationController: UINavigationController) {
-            router?.pushToTodoListScreen(navigationConroller: navigationController)
+        router?.pushToTodoListScreen(navigationConroller: navigationController)
     }
         
     
@@ -36,6 +42,7 @@ extension TodoListPresenter: InteractorToPresenterTodoListProtocol {
     
     
     func todoListFetchedSuccess(todoListModelArray: [Todo]) {
+        todoArray = todoListModelArray
         view?.showTodoList(todoArray: todoListModelArray)
     }
     
