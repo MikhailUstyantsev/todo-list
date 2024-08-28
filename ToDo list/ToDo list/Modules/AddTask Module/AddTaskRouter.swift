@@ -11,7 +11,7 @@ import UIKit
 
 class AddTaskRouter: PresenterToRouterAddTaskProtocol {
     
-    static var view : AddTaskViewController?
+    static var view: AddTaskViewController?
     static var todoListView: PresenterToViewTodoListProtocol?
     
     // MARK: Static methods

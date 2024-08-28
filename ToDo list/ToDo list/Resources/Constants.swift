@@ -29,6 +29,7 @@ enum Constants {
         static let addNewTask = "Add New Task"
         static let add = "Add"
         static let error = "Error"
+        static let cancel = "Cancel"
         static let fillOutTheForm = "Please fill out the form"
     }
     

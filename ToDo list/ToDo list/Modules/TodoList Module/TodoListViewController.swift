@@ -150,7 +150,21 @@ extension TodoListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionDataSource.itemIdentifier(for: indexPath) else { return }
-        print(item.todo)
+        Utilities.showDeleteSheet(
+            strTitle: "Do you want to delete: \(item.todo)?",
+            strMessage: nil,
+            parent: self,
+            DeleteButtonTitle: nil,
+            CancelButtonTitle: Constants.String.cancel,
+            deleteBlock: { [weak self] in
+                let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
+                self?.presenter?.todoArray = updated ?? []
+                self?.presenter?.updatePersistense()
+                self?.refreshList()
+            },
+            cancelBlock: nil
+        )
+        
     }
     
 }

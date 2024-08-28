@@ -63,4 +63,35 @@ final class Utilities {
     }
     
     
+    static func showDeleteSheet(
+        strTitle: String,
+        strMessage: String?,
+        parent: AnyObject,
+        DeleteButtonTitle: String? ,
+        CancelButtonTitle: String?,
+        deleteBlock : (() -> Void)?,
+        cancelBlock : (() -> Void)?
+    )
+    {
+        let alert = UIAlertController(title: strTitle, message: (strMessage ?? ""), preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: DeleteButtonTitle ?? "Delete", style: .destructive) { (action: UIAlertAction!) in
+            if (deleteBlock != nil) {
+                deleteBlock!()
+            }
+        }
+        alert.addAction(deleteAction)
+        
+        if CancelButtonTitle != nil {
+            let CancelAction = UIAlertAction(title: CancelButtonTitle, style: .cancel) { (action:UIAlertAction!) in
+                if (cancelBlock != nil) {
+                    cancelBlock!()
+                }
+            }
+            alert.addAction(CancelAction)
+        }
+        
+        parent.present(alert, animated: true, completion: nil)
+        
+    }
 }

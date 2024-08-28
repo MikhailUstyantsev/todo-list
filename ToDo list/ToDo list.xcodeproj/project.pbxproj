@@ -17,6 +17,7 @@
 		833DABA12C7E04350060C286 /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */; };
 		833DABA22C7E04350060C286 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */; };
 		833DABA32C7E04350060C286 /* AddTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */; };
+		833DABAB2C7EF7040060C286 /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 833DABAA2C7EF7040060C286 /* SwipeCellKit */; };
 		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
 		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
 		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833DABAB2C7EF7040060C286 /* SwipeCellKit in Frameworks */,
 				83FFFD952C7A5E7D00E9469E /* M13Checkbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,53 +140,13 @@
 		833DAB992C7E04070060C286 /* AddTask Module */ = {
 			isa = PBXGroup;
 			children = (
-				833DABA42C7E064C0060C286 /* Protocols */,
-				833DABA52C7E06560060C286 /* Presenter */,
-				833DABA62C7E06600060C286 /* Router */,
-				833DABA72C7E06690060C286 /* View */,
-				833DABA82C7E066F0060C286 /* Interactor */,
-			);
-			path = "AddTask Module";
-			sourceTree = "<group>";
-		};
-		833DABA42C7E064C0060C286 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
 				833DAB9A2C7E04350060C286 /* AddTaskContract.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		833DABA52C7E06560060C286 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
 				833DAB9B2C7E04350060C286 /* AddTaskPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		833DABA62C7E06600060C286 /* Router */ = {
-			isa = PBXGroup;
-			children = (
 				833DAB9C2C7E04350060C286 /* AddTaskRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		833DABA72C7E06690060C286 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				833DAB9D2C7E04350060C286 /* AddTaskViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		833DABA82C7E066F0060C286 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
 				833DAB9E2C7E04350060C286 /* AddTaskInteractor.swift */,
 			);
-			path = Interactor;
+			path = "AddTask Module";
 			sourceTree = "<group>";
 		};
 		83B59A472C79037800CA5B7E = {
@@ -303,11 +265,12 @@
 		83FFFDAF2C7AEF5400E9469E /* TodoList Module */ = {
 			isa = PBXGroup;
 			children = (
-				83FFFDB82C7B014400E9469E /* Protocols */,
-				83FFFDB72C7B013900E9469E /* Presenter */,
-				83FFFDB62C7B013000E9469E /* Router */,
-				83FFFDB42C7B00FE00E9469E /* View */,
-				83FFFDB52C7B011000E9469E /* Interactor */,
+				83FFFDA52C7AEF4A00E9469E /* TodoListContract.swift */,
+				83FFFDA62C7AEF4A00E9469E /* TodoListPresenter.swift */,
+				83FFFDA72C7AEF4A00E9469E /* TodoListRouter.swift */,
+				83FFFDA82C7AEF4A00E9469E /* TodoListViewController.swift */,
+				83FFFDA92C7AEF4A00E9469E /* TodoListInteractor.swift */,
+				83FFFDB92C7B9C1700E9469E /* Components */,
 			);
 			path = "TodoList Module";
 			sourceTree = "<group>";
@@ -319,47 +282,6 @@
 				83FFFDAF2C7AEF5400E9469E /* TodoList Module */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		83FFFDB42C7B00FE00E9469E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				83FFFDB92C7B9C1700E9469E /* Components */,
-				83FFFDA82C7AEF4A00E9469E /* TodoListViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		83FFFDB52C7B011000E9469E /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				83FFFDA92C7AEF4A00E9469E /* TodoListInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		83FFFDB62C7B013000E9469E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				83FFFDA72C7AEF4A00E9469E /* TodoListRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		83FFFDB72C7B013900E9469E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				83FFFDA62C7AEF4A00E9469E /* TodoListPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		83FFFDB82C7B014400E9469E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				83FFFDA52C7AEF4A00E9469E /* TodoListContract.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		83FFFDB92C7B9C1700E9469E /* Components */ = {
@@ -431,6 +353,7 @@
 			name = "ToDo list";
 			packageProductDependencies = (
 				83FFFD942C7A5E7D00E9469E /* M13Checkbox */,
+				833DABAA2C7EF7040060C286 /* SwipeCellKit */,
 			);
 			productName = "ToDo list";
 			productReference = 83B59A502C79037800CA5B7E /* ToDo list.app */;
@@ -462,6 +385,7 @@
 			mainGroup = 83B59A472C79037800CA5B7E;
 			packageReferences = (
 				83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */,
+				833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = 83B59A512C79037800CA5B7E /* Products */;
 			projectDirPath = "";
@@ -755,6 +679,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Marxon13/M13Checkbox.git";
@@ -766,6 +698,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		833DABAA2C7EF7040060C286 /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 833DABA92C7EF7040060C286 /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
+		};
 		83FFFD942C7A5E7D00E9469E /* M13Checkbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 83FFFD932C7A5E7D00E9469E /* XCRemoteSwiftPackageReference "M13Checkbox" */;
