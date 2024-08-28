@@ -10,11 +10,11 @@ import Foundation
 
 class AddTaskPresenter: ViewToPresenterAddTaskProtocol {
     
-    var todoListView: PresenterToViewTodoListProtocol?
+    weak var todoListView: PresenterToViewTodoListProtocol?
     
 
     // MARK: Properties
-    var view: PresenterToViewAddTaskProtocol?
+    weak var view: PresenterToViewAddTaskProtocol?
     var interactor: PresenterToInteractorAddTaskProtocol?
     var router: PresenterToRouterAddTaskProtocol?
     

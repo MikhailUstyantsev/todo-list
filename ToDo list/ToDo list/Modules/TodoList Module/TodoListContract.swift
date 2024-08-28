@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: View Output (Presenter -> View)
-protocol PresenterToViewTodoListProtocol {
+protocol PresenterToViewTodoListProtocol: AnyObject {
     func refreshList()
     func showTodoList(todoArray: [Todo])
     func showError()
