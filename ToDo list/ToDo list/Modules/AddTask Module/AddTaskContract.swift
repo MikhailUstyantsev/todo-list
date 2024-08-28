@@ -24,9 +24,14 @@ protocol ViewToPresenterAddTaskProtocol: AnyObject {
     var interactor: PresenterToInteractorAddTaskProtocol? { get set }
     var router: PresenterToRouterAddTaskProtocol? { get set }
     
+}
+
+protocol AddTodoEventHandler: AnyObject {
     func addTaskClicked(with text: String)
     func cancelTaskClicked()
 }
+
+
 
 
 // MARK: Interactor Input (Presenter -> Interactor)

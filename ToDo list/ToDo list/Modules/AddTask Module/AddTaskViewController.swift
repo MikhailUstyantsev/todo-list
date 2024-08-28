@@ -12,6 +12,8 @@ final class AddTaskViewController: UIViewController {
     
     // MARK: - Properties
     weak var presenter: ViewToPresenterAddTaskProtocol?
+    var output: AddTodoEventHandler?
+    
     let textView: UITextView = {
         let textView = UITextView()
         textView.layer.borderWidth = 2
@@ -54,7 +56,7 @@ final class AddTaskViewController: UIViewController {
     
     
     @objc private func closeTapped() {
-        presenter?.cancelTaskClicked()
+        output?.cancelTaskClicked()
     }
     
     
@@ -71,7 +73,7 @@ final class AddTaskViewController: UIViewController {
             )
             return
         }
-        presenter?.addTaskClicked(with: textView.text)
+        output?.addTaskClicked(with: textView.text)
     }
     
     
@@ -102,9 +104,6 @@ final class AddTaskViewController: UIViewController {
     }
     
     
-    deinit {
-        print("deinit from AddTaskViewController")
-    }
 }
 
 extension AddTaskViewController: PresenterToViewAddTaskProtocol{

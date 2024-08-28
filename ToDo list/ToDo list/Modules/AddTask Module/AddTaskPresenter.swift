@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AddTaskPresenter: ViewToPresenterAddTaskProtocol {
+class AddTaskPresenter: ViewToPresenterAddTaskProtocol, AddTodoEventHandler {
     
     weak var todoListView: PresenterToViewTodoListProtocol?
     

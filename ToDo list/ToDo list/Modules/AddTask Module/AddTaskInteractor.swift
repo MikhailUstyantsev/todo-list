@@ -11,7 +11,7 @@ import Foundation
 class AddTaskInteractor: PresenterToInteractorAddTaskProtocol {
     
     // MARK: Properties
-    var presenter: InteractorToPresenterAddTaskProtocol?
+    weak var presenter: InteractorToPresenterAddTaskProtocol?
     
     var persistentManager: PersistenceManager
     

@@ -19,11 +19,12 @@ class AddTaskRouter: PresenterToRouterAddTaskProtocol {
         
         let viewController = AddTaskViewController()
         
-        let presenter: ViewToPresenterAddTaskProtocol & InteractorToPresenterAddTaskProtocol = AddTaskPresenter()
+        let presenter: ViewToPresenterAddTaskProtocol & InteractorToPresenterAddTaskProtocol & AddTodoEventHandler = AddTaskPresenter()
         
         viewController.presenter = presenter
         viewController.presenter?.router = AddTaskRouter()
         viewController.presenter?.view = viewController
+        viewController.output = presenter
         let persistenceManager = PersistenceManager()
         viewController.presenter?.interactor = AddTaskInteractor(persistentManager: persistenceManager)
         viewController.presenter?.interactor?.presenter = presenter
