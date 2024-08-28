@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: View Output (Presenter -> View)
-protocol PresenterToViewAddTaskProtocol {
+protocol PresenterToViewAddTaskProtocol: AnyObject {
     func showAddTaskSuccess()
     func showAddTaskFailed(message: String)
 }
@@ -30,7 +30,7 @@ protocol ViewToPresenterAddTaskProtocol: AnyObject {
 
 
 // MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorAddTaskProtocol {
+protocol PresenterToInteractorAddTaskProtocol: AnyObject {
     
     var presenter: InteractorToPresenterAddTaskProtocol? { get set }
     var persistentManager: PersistenceManager { get set }
@@ -39,7 +39,7 @@ protocol PresenterToInteractorAddTaskProtocol {
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterAddTaskProtocol {
+protocol InteractorToPresenterAddTaskProtocol: AnyObject {
     func addNewTaskSuccess()
     func addNewTaskFailed(message: String)
 }
