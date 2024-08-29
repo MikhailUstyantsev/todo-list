@@ -10,10 +10,9 @@ import UIKit
 
 class TodoListPresenter: ViewToPresenterTodoListProtocol {
     
-    var todoArray: [Todo] = [] 
-
     // MARK: Properties
-    var view: PresenterToViewTodoListProtocol?
+    var todoArray: [Todo] = []
+    weak var view: PresenterToViewTodoListProtocol?
     var interactor: PresenterToInteractorTodoListProtocol?
     var router: PresenterToRouterTodoListProtocol?
     
@@ -28,8 +27,8 @@ class TodoListPresenter: ViewToPresenterTodoListProtocol {
     }
     
     
-    func showTodoListController(navigationController: UINavigationController) {
-        router?.pushToTodoListScreen(navigationConroller: navigationController)
+    func showEditTaskController(viewController: TodoListViewController, item: Todo) {
+        router?.presentEditTaskScreen(fromViewController: viewController, item: item)
     }
         
     
@@ -60,6 +59,4 @@ extension TodoListPresenter: InteractorToPresenterTodoListProtocol {
     func todoListFetchFailed() {
          view?.showError()
     }
-    
-    
 }

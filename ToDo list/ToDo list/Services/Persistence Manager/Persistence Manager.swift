@@ -37,6 +37,22 @@ final class PersistenceManager {
     }
     
     
+    func updateTask(oldText: String, newText: String) {
+        let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(Goal.text), oldText)
+        fetchRequest.predicate = predicate
+        do {
+            let items = try coreDataStack.managedContext.fetch(fetchRequest)
+            if let task = items.first {
+                task.setValue(newText, forKey: "text")
+            }
+            coreDataStack.saveContext()
+        } catch let error as NSError {
+            print("Could not update task \(error), \(error.userInfo)")
+        }
+    }
+    
+    
     func saveTasks(todoList: [Todo]) {
         /// clean storage in order to avoid duplications
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Goal")

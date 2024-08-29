@@ -29,7 +29,7 @@ protocol ViewToPresenterTodoListProtocol {
     func updatePersistense()
     var todoArray: [Todo] { get set }
     
-    func showTodoListController(navigationController: UINavigationController)
+    func showEditTaskController(viewController: TodoListViewController, item: Todo)
     func showAddNewTaskControllerFrom(viewController: TodoListViewController)
 }
 
@@ -55,6 +55,6 @@ protocol InteractorToPresenterTodoListProtocol {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterTodoListProtocol {
     static func createModule() -> TodoListViewController
-    func pushToTodoListScreen(navigationConroller: UINavigationController)
+    func presentEditTaskScreen(fromViewController: TodoListViewController, item: Todo)
     func presentAddTaskScreen(fromViewController: TodoListViewController)
 }

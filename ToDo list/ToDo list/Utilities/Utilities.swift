@@ -69,11 +69,20 @@ final class Utilities {
         parent: AnyObject,
         DeleteButtonTitle: String? ,
         CancelButtonTitle: String?,
+        ActionButtonTitle: String?,
         deleteBlock : (() -> Void)?,
-        cancelBlock : (() -> Void)?
+        cancelBlock : (() -> Void)?,
+        actionBlock : (() -> Void)?
     )
     {
         let alert = UIAlertController(title: strTitle, message: (strMessage ?? ""), preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: ActionButtonTitle ?? "Some action", style: .default) { (action: UIAlertAction!) in
+            if (actionBlock != nil) {
+                actionBlock!()
+            }
+        }
+        alert.addAction(action)
         
         let deleteAction = UIAlertAction(title: DeleteButtonTitle ?? "Delete", style: .destructive) { (action: UIAlertAction!) in
             if (deleteBlock != nil) {

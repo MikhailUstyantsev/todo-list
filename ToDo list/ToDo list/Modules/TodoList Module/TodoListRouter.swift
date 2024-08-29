@@ -11,6 +11,7 @@ import UIKit
 
 class TodoListRouter: PresenterToRouterTodoListProtocol {
     
+    
     // MARK: Static methods
     static func createModule() -> TodoListViewController {
         
@@ -29,8 +30,9 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
     }
     
     
-    func pushToTodoListScreen(navigationConroller: UINavigationController) {
-        // - TODO: ???
+    func presentEditTaskScreen(fromViewController: TodoListViewController, item: Todo) {
+        let router: PresenterToRouterEditTaskProtocol = EditTaskRouter()
+        router.presentToEditTaskScreen(fromViewController: fromViewController, item: item)
     }
     
     
@@ -38,5 +40,4 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
         let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
         router.presentToAddTaskScreen(fromViewController: fromViewController)
     }
-    
 }

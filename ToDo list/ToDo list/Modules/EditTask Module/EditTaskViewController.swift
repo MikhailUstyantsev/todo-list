@@ -1,18 +1,20 @@
 //
-//  AddTaskViewController.swift
+//  EditTaskViewController.swift
 //  ToDo list
 //
-//  Created by Mikhail Ustyantsev on 27.08.2024.
-//
+//  Created by Mikhail Ustyantsev on 29.08.2024.
+//  
 //
 
 import UIKit
 
-final class AddTaskViewController: UIViewController {
+class EditTaskViewController: UIViewController {
+    
     
     // MARK: - Properties
-    var presenter: ViewToPresenterAddTaskProtocol?
-    var output: AddTodoEventHandler?
+    var presenter: ViewToPresenterEditTaskProtocol?
+    var output: EditTodoEventHandler?
+    let task: Todo
     
     let textView: UITextView = {
         let textView = UITextView()
@@ -27,11 +29,11 @@ final class AddTaskViewController: UIViewController {
         return textView
     }()
     
-    let addTaskButton: UIButton = {
+    let updateTaskButton: UIButton = {
         let button = UIButton(configuration: .filled())
         button.configuration?.baseBackgroundColor = Constants.Color.purpleIntense
         button.configuration?.baseForegroundColor = .white
-        button.configuration?.title = Constants.String.add
+        button.configuration?.title = Constants.String.update
         button.configuration?.cornerStyle = .large
         
         return button
@@ -39,30 +41,39 @@ final class AddTaskViewController: UIViewController {
     
     lazy var margins = view.safeAreaLayoutGuide
     
+    init(task: Todo) {
+        self.task = task
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        NSCoder.fatalErrorNotImplemented()
+    }
+    
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureTextView()
-        configureAddButton()
+        configureUpdateButton()
     }
     
     
     private func configureViewController() {
-        title = Constants.String.addNewTask
+        title = Constants.String.editTask
         view.backgroundColor = Constants.Color.background
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeTapped))
-        textView.delegate = self
     }
     
     
     @objc private func closeTapped() {
-        output?.cancelTaskClicked()
+        output?.cancelEditTaskClicked()
     }
     
     
-    @objc private func addTaskTapped() {
+    @objc private func updateTaskTapped() {
         guard !textView.text.isEmpty else {
             Utilities.showAlert(
                 strTitle: Constants.String.error,
@@ -75,7 +86,7 @@ final class AddTaskViewController: UIViewController {
             )
             return
         }
-        output?.addTaskClicked(with: textView.text)
+        output?.editTaskFinished(newText: textView.text, oldText: task.todo)
     }
     
     
@@ -90,42 +101,39 @@ final class AddTaskViewController: UIViewController {
         ])
         textView.backgroundColor = Constants.Color.background
         textView.becomeFirstResponder()
+        textView.insertText(task.todo)
     }
     
     
-    private func configureAddButton() {
-        view.addView(addTaskButton)
+    private func configureUpdateButton() {
+        view.addView(updateTaskButton)
         
         NSLayoutConstraint.activate([
-            addTaskButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 50),
-            addTaskButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
-            addTaskButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
-            addTaskButton.heightAnchor.constraint(equalToConstant: 55)
+            updateTaskButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 50),
+            updateTaskButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
+            updateTaskButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+            updateTaskButton.heightAnchor.constraint(equalToConstant: 55)
         ])
-        addTaskButton.addTarget(self, action: #selector(addTaskTapped), for: .touchUpInside)
+        updateTaskButton.addTarget(self, action: #selector(updateTaskTapped), for: .touchUpInside)
     }
-    
-    
 }
 
-extension AddTaskViewController: PresenterToViewAddTaskProtocol{
+extension EditTaskViewController: PresenterToViewEditTaskProtocol {
     
-    func showAddTaskSuccess() {
+    // MARK: Implement View Output Methods
+    func editTaskSuccess() {
         let hudView = SuccessHud.hud(inView: view, animated: true)
-        hudView.text = "Saved"
+        hudView.text = "Updated"
         afterDelay(1.5) {
             hudView.hide()
         }
     }
     
     
-    func showAddTaskFailed(message: String) {
+    func editTaskFailed(message: String) {
         
     }
     
-}
-
-
-extension AddTaskViewController: UITextViewDelegate {
+    
     
 }

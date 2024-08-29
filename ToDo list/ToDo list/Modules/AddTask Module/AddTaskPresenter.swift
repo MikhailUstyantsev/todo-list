@@ -10,10 +10,9 @@ import Foundation
 
 class AddTaskPresenter: ViewToPresenterAddTaskProtocol, AddTodoEventHandler {
     
-    weak var todoListView: PresenterToViewTodoListProtocol?
     
-
     // MARK: Properties
+    weak var todoListView: PresenterToViewTodoListProtocol?
     weak var view: PresenterToViewAddTaskProtocol?
     var interactor: PresenterToInteractorAddTaskProtocol?
     var router: PresenterToRouterAddTaskProtocol?
@@ -23,12 +22,14 @@ class AddTaskPresenter: ViewToPresenterAddTaskProtocol, AddTodoEventHandler {
            interactor?.addNewTask(withTitle: title)
        }
        
+    
     func cancelTaskClicked() {
         router?.closeAddTaskScreen()
     }
 }
 
 extension AddTaskPresenter: InteractorToPresenterAddTaskProtocol {
+    
     
     func addNewTaskSuccess() {
         view?.showAddTaskSuccess()
@@ -38,9 +39,8 @@ extension AddTaskPresenter: InteractorToPresenterAddTaskProtocol {
         }
     }
     
+    
     func addNewTaskFailed(message: String) {
         
     }
-    
-    
 }

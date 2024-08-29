@@ -26,12 +26,11 @@ protocol ViewToPresenterAddTaskProtocol: AnyObject {
     
 }
 
+
 protocol AddTodoEventHandler: AnyObject {
     func addTaskClicked(with text: String)
     func cancelTaskClicked()
 }
-
-
 
 
 // MARK: Interactor Input (Presenter -> Interactor)
