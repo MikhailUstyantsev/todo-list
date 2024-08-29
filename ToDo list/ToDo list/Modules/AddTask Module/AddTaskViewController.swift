@@ -11,7 +11,7 @@ import UIKit
 final class AddTaskViewController: UIViewController {
     
     // MARK: - Properties
-    weak var presenter: ViewToPresenterAddTaskProtocol?
+    var presenter: ViewToPresenterAddTaskProtocol?
     var output: AddTodoEventHandler?
     
     let textView: UITextView = {
@@ -84,7 +84,7 @@ final class AddTaskViewController: UIViewController {
             textView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 50),
             textView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
             textView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
-            textView.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.3)
+            textView.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
         ])
         textView.backgroundColor = Constants.Color.background
         textView.becomeFirstResponder()

@@ -22,6 +22,11 @@
 		833DABB32C7F0EAB0060C286 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABB22C7F0EAB0060C286 /* Functions.swift */; };
 		833DABB62C7F23E80060C286 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 833DABB52C7F23E80060C286 /* loader.json */; };
 		833DABB92C7F24B30060C286 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 833DABB82C7F24B30060C286 /* Lottie */; };
+		833DABC22C8043EA0060C286 /* EditTaskContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABBD2C8043EA0060C286 /* EditTaskContract.swift */; };
+		833DABC32C8043EA0060C286 /* EditTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABBE2C8043EA0060C286 /* EditTaskPresenter.swift */; };
+		833DABC42C8043EA0060C286 /* EditTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABBF2C8043EA0060C286 /* EditTaskRouter.swift */; };
+		833DABC52C8043EA0060C286 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABC02C8043EA0060C286 /* EditTaskViewController.swift */; };
+		833DABC62C8043EA0060C286 /* EditTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DABC12C8043EA0060C286 /* EditTaskInteractor.swift */; };
 		83B59A542C79037800CA5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A532C79037800CA5B7E /* AppDelegate.swift */; };
 		83B59A562C79037800CA5B7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59A552C79037800CA5B7E /* SceneDelegate.swift */; };
 		83B59A5D2C79037900CA5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59A5C2C79037900CA5B7E /* Assets.xcassets */; };
@@ -76,6 +81,11 @@
 		833DABAD2C7F06ED0060C286 /* SuccessHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessHud.swift; sourceTree = "<group>"; };
 		833DABB22C7F0EAB0060C286 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		833DABB52C7F23E80060C286 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		833DABBD2C8043EA0060C286 /* EditTaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskContract.swift; sourceTree = "<group>"; };
+		833DABBE2C8043EA0060C286 /* EditTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskPresenter.swift; sourceTree = "<group>"; };
+		833DABBF2C8043EA0060C286 /* EditTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskRouter.swift; sourceTree = "<group>"; };
+		833DABC02C8043EA0060C286 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		833DABC12C8043EA0060C286 /* EditTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskInteractor.swift; sourceTree = "<group>"; };
 		83B59A502C79037800CA5B7E /* ToDo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B59A532C79037800CA5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B59A552C79037800CA5B7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +183,18 @@
 				833DABB52C7F23E80060C286 /* loader.json */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833DABBC2C80438F0060C286 /* EditTask Module */ = {
+			isa = PBXGroup;
+			children = (
+				833DABBD2C8043EA0060C286 /* EditTaskContract.swift */,
+				833DABBE2C8043EA0060C286 /* EditTaskPresenter.swift */,
+				833DABBF2C8043EA0060C286 /* EditTaskRouter.swift */,
+				833DABC02C8043EA0060C286 /* EditTaskViewController.swift */,
+				833DABC12C8043EA0060C286 /* EditTaskInteractor.swift */,
+			);
+			path = "EditTask Module";
 			sourceTree = "<group>";
 		};
 		83B59A472C79037800CA5B7E = {
@@ -306,8 +328,9 @@
 		83FFFDB02C7AF08900E9469E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				833DAB992C7E04070060C286 /* AddTask Module */,
 				83FFFDAF2C7AEF5400E9469E /* TodoList Module */,
+				833DAB992C7E04070060C286 /* AddTask Module */,
+				833DABBC2C80438F0060C286 /* EditTask Module */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -482,6 +505,11 @@
 				83FFFDAA2C7AEF4A00E9469E /* TodoListContract.swift in Sources */,
 				83FFFDAB2C7AEF4A00E9469E /* TodoListPresenter.swift in Sources */,
 				83FFFDAC2C7AEF4A00E9469E /* TodoListRouter.swift in Sources */,
+				833DABC22C8043EA0060C286 /* EditTaskContract.swift in Sources */,
+				833DABC32C8043EA0060C286 /* EditTaskPresenter.swift in Sources */,
+				833DABC42C8043EA0060C286 /* EditTaskRouter.swift in Sources */,
+				833DABC52C8043EA0060C286 /* EditTaskViewController.swift in Sources */,
+				833DABC62C8043EA0060C286 /* EditTaskInteractor.swift in Sources */,
 				83FFFDAD2C7AEF4A00E9469E /* TodoListViewController.swift in Sources */,
 				83FFFDAE2C7AEF4A00E9469E /* TodoListInteractor.swift in Sources */,
 				83FFFD8E2C79C79F00E9469E /* Tasks.swift in Sources */,

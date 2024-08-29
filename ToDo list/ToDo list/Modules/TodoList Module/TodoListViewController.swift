@@ -149,6 +149,7 @@ extension TodoListViewController: PresenterToViewTodoListProtocol {
     
     func playLoader() {
         animationView.play()
+        addNewTaskButton.isEnabled = false
     }
     
     
@@ -156,7 +157,9 @@ extension TodoListViewController: PresenterToViewTodoListProtocol {
         animationView.stop()
         DispatchQueue.main.async { [weak self] in
             self?.animationView.removeFromSuperview()
+            self?.addNewTaskButton.isEnabled = true
         }
+      
     }
     
     
@@ -183,18 +186,22 @@ extension TodoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionDataSource.itemIdentifier(for: indexPath) else { return }
         Utilities.showDeleteSheet(
-            strTitle: "Do you want to delete: \(item.todo)?",
+            strTitle: Constants.String.selectAction,
             strMessage: nil,
             parent: self,
             DeleteButtonTitle: nil,
             CancelButtonTitle: Constants.String.cancel,
+            ActionButtonTitle: Constants.String.edit,
             deleteBlock: { [weak self] in
                 let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
                 self?.presenter?.todoArray = updated ?? []
                 self?.presenter?.updatePersistense()
                 self?.refreshList()
             },
-            cancelBlock: nil
+            cancelBlock: nil,
+            actionBlock: {
+                self.presenter?.showEditTaskController(viewController: self, item: item)
+            }
         )
         
     }

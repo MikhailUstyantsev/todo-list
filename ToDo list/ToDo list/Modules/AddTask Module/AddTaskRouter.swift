@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AddTaskRouter: PresenterToRouterAddTaskProtocol {
+final class AddTaskRouter: PresenterToRouterAddTaskProtocol {
     
     static var view: AddTaskViewController?
     static var todoListView: PresenterToViewTodoListProtocol?

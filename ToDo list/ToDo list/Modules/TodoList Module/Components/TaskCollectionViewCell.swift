@@ -74,7 +74,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("Interface Builder is not supported!")
+        NSCoder.fatalErrorNotImplemented()
     }
     
     

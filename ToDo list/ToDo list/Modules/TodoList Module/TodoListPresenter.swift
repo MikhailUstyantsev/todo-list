@@ -13,7 +13,7 @@ class TodoListPresenter: ViewToPresenterTodoListProtocol {
     var todoArray: [Todo] = [] 
 
     // MARK: Properties
-    var view: PresenterToViewTodoListProtocol?
+    weak var view: PresenterToViewTodoListProtocol?
     var interactor: PresenterToInteractorTodoListProtocol?
     var router: PresenterToRouterTodoListProtocol?
     
@@ -28,8 +28,8 @@ class TodoListPresenter: ViewToPresenterTodoListProtocol {
     }
     
     
-    func showTodoListController(navigationController: UINavigationController) {
-        router?.pushToTodoListScreen(navigationConroller: navigationController)
+    func showEditTaskController(viewController: TodoListViewController, item: Todo) {
+        router?.presentEditTaskScreen(fromViewController: viewController, item: item)
     }
         
     
