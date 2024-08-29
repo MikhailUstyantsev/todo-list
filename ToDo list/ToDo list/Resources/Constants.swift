@@ -35,6 +35,7 @@ enum Constants {
         static let edit = "Edit"
         static let editTask = "Edit Task"
         static let update = "Update"
+        static let delete = "Delete"
     }
     
     

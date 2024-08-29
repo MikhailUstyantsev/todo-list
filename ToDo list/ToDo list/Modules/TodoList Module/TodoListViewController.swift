@@ -194,10 +194,19 @@ extension TodoListViewController: UICollectionViewDelegate {
             CancelButtonTitle: Constants.String.cancel,
             ActionButtonTitle: Constants.String.edit,
             deleteBlock: { [weak self] in
-                let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
-                self?.presenter?.todoArray = updated ?? []
-                self?.presenter?.updatePersistense()
-                self?.refreshList()
+                
+                let alert = UIAlertController(title: "Delete \(item.todo)?", message: nil, preferredStyle: .alert)
+                
+                let cancel = UIAlertAction(title: Constants.String.cancel, style: .cancel)
+                alert.addAction(cancel)
+                let delete = UIAlertAction(title: Constants.String.delete, style: .destructive) { action in
+                    let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
+                    self?.presenter?.todoArray = updated ?? []
+                    self?.presenter?.updatePersistense()
+                    self?.refreshList()
+                }
+                alert.addAction(delete)
+                self?.present(alert, animated: true)
             },
             cancelBlock: nil,
             actionBlock: {
