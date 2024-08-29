@@ -15,17 +15,18 @@ class TodoListViewController: UIViewController {
         case main
     }
     
-    
     //MARK: - Properties
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Todo>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Todo>
     var presenter: ViewToPresenterTodoListProtocol?
+    
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(
             frame: .zero,
             collectionViewLayout: generateLayout())
         return collection
     }()
+    
     private lazy var collectionDataSource = makeDataSource()
     let addNewTaskButton = AddNewTaskButton(backgroundColor: Constants.Color.purpleIntense, foregroundColor: .white)
     private lazy var margins = view.safeAreaLayoutGuide
@@ -203,7 +204,6 @@ extension TodoListViewController: UICollectionViewDelegate {
                 self.presenter?.showEditTaskController(viewController: self, item: item)
             }
         )
-        
     }
     
 }

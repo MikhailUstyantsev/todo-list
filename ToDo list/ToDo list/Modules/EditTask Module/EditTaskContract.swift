@@ -11,7 +11,8 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewEditTaskProtocol: AnyObject {
-   
+    func editTaskSuccess()
+    func editTaskFailed(message: String)
 }
 
 
@@ -26,7 +27,7 @@ protocol ViewToPresenterEditTaskProtocol: AnyObject {
 
 
 protocol EditTodoEventHandler: AnyObject {
-    func editTaskFinished(with text: String)
+    func editTaskFinished(newText: String, oldText: String)
     func cancelEditTaskClicked()
 }
 
@@ -35,18 +36,21 @@ protocol EditTodoEventHandler: AnyObject {
 protocol PresenterToInteractorEditTaskProtocol: AnyObject {
     
     var presenter: InteractorToPresenterEditTaskProtocol? { get set }
+    var persistentManager: PersistenceManager { get set }
+    func updateTask(newTitle: String, oldTitle: String)
 }
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterEditTaskProtocol: AnyObject {
-    
+    func editTaskSuccess()
+    func editTaskFailed(message: String)
 }
 
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterEditTaskProtocol: AnyObject {
-    static func createModule() -> EditTaskViewController
+    static func createModule(task: Todo) -> EditTaskViewController
     func presentToEditTaskScreen(fromViewController: TodoListViewController, item: Todo)
     func closeEditTaskScreen()
 }

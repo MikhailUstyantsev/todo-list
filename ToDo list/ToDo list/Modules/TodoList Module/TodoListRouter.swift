@@ -40,5 +40,4 @@ class TodoListRouter: PresenterToRouterTodoListProtocol {
         let router: PresenterToRouterAddTaskProtocol = AddTaskRouter()
         router.presentToAddTaskScreen(fromViewController: fromViewController)
     }
-    
 }

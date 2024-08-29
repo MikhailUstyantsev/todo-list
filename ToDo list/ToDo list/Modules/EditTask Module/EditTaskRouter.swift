@@ -3,7 +3,7 @@
 //  ToDo list
 //
 //  Created by Mikhail Ustyantsev on 29.08.2024.
-//  
+//
 //
 
 import Foundation
@@ -15,9 +15,9 @@ class EditTaskRouter: PresenterToRouterEditTaskProtocol {
     static var todoListView: PresenterToViewTodoListProtocol?
     
     // MARK: Static methods
-    static func createModule() -> EditTaskViewController {
+    static func createModule(task: Todo) -> EditTaskViewController {
         
-        let viewController = EditTaskViewController()
+        let viewController = EditTaskViewController(task: task)
         
         let presenter: ViewToPresenterEditTaskProtocol & InteractorToPresenterEditTaskProtocol & EditTodoEventHandler = EditTaskPresenter()
         
@@ -25,7 +25,8 @@ class EditTaskRouter: PresenterToRouterEditTaskProtocol {
         viewController.presenter?.router = EditTaskRouter()
         viewController.presenter?.view = viewController
         viewController.output = presenter
-        viewController.presenter?.interactor = EditTaskInteractor()
+        let persistenceManager = PersistenceManager()
+        viewController.presenter?.interactor = EditTaskInteractor(persistentManager: persistenceManager)
         viewController.presenter?.interactor?.presenter = presenter
         
 //        viewController.modalPresentationStyle = .overCurrentContext
@@ -36,7 +37,7 @@ class EditTaskRouter: PresenterToRouterEditTaskProtocol {
     
     func presentToEditTaskScreen(fromViewController: TodoListViewController, item: Todo) {
         EditTaskRouter.todoListView = fromViewController.presenter?.view
-        let viewToPresent = EditTaskRouter.createModule()
+        let viewToPresent = EditTaskRouter.createModule(task: item)
         viewToPresent.presenter?.todoListView = fromViewController.presenter?.view
         let navigationViewController = UINavigationController(rootViewController: viewToPresent)
         EditTaskRouter.view = viewToPresent

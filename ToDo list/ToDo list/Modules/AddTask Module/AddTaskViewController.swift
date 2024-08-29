@@ -26,6 +26,7 @@ final class AddTaskViewController: UIViewController {
         
         return textView
     }()
+    
     let addTaskButton: UIButton = {
         let button = UIButton(configuration: .filled())
         button.configuration?.baseBackgroundColor = Constants.Color.purpleIntense
@@ -35,6 +36,7 @@ final class AddTaskViewController: UIViewController {
         
         return button
     }()
+    
     lazy var margins = view.safeAreaLayoutGuide
     
     

@@ -9,7 +9,21 @@
 import Foundation
 
 class EditTaskInteractor: PresenterToInteractorEditTaskProtocol {
-
+    
     // MARK: Properties
-   weak var presenter: InteractorToPresenterEditTaskProtocol?
+    weak var presenter: InteractorToPresenterEditTaskProtocol?
+    var persistentManager: PersistenceManager
+    
+    
+    init(persistentManager: PersistenceManager) {
+        self.persistentManager = persistentManager
+    }
+    
+    
+    func updateTask(newTitle: String, oldTitle: String) {
+        persistentManager.updateTask(oldText: oldTitle, newText: newTitle)
+        presenter?.editTaskSuccess()
+    }
+    
+    
 }

@@ -12,12 +12,13 @@ class AddTaskInteractor: PresenterToInteractorAddTaskProtocol {
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterAddTaskProtocol?
-    
     var persistentManager: PersistenceManager
+    
     
     init(persistentManager: PersistenceManager) {
         self.persistentManager = persistentManager
     }
+    
     
     func addNewTask(withTitle: String) {
         let newTask = Todo(

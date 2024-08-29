@@ -10,9 +10,8 @@ import UIKit
 
 class TodoListPresenter: ViewToPresenterTodoListProtocol {
     
-    var todoArray: [Todo] = [] 
-
     // MARK: Properties
+    var todoArray: [Todo] = []
     weak var view: PresenterToViewTodoListProtocol?
     var interactor: PresenterToInteractorTodoListProtocol?
     var router: PresenterToRouterTodoListProtocol?
@@ -60,6 +59,4 @@ extension TodoListPresenter: InteractorToPresenterTodoListProtocol {
     func todoListFetchFailed() {
          view?.showError()
     }
-    
-    
 }
