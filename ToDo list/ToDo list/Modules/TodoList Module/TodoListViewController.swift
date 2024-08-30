@@ -177,7 +177,14 @@ extension TodoListViewController: PresenterToViewTodoListProtocol {
     
     
     func showError() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.addNewTaskButton.isEnabled = false
+        }
+        let hudView = ErrorHud.hud(inView: view, animated: true)
+        hudView.text = Constants.String.error
+        afterDelay(2.5) {
+            hudView.hide()
+        }
     }
 }
 
@@ -194,19 +201,24 @@ extension TodoListViewController: UICollectionViewDelegate {
             CancelButtonTitle: Constants.String.cancel,
             ActionButtonTitle: Constants.String.edit,
             deleteBlock: { [weak self] in
-                
-                let alert = UIAlertController(title: "Delete \(item.todo)?", message: nil, preferredStyle: .alert)
+                guard let self else { return }
+                let alert = UIAlertController(title: "Do you really want to delete \"\(item.todo)\"?", message: nil, preferredStyle: .alert)
                 
                 let cancel = UIAlertAction(title: Constants.String.cancel, style: .cancel)
                 alert.addAction(cancel)
                 let delete = UIAlertAction(title: Constants.String.delete, style: .destructive) { action in
-                    let updated = self?.presenter?.todoArray.filter { $0.todo != item.todo }
-                    self?.presenter?.todoArray = updated ?? []
-                    self?.presenter?.updatePersistense()
-                    self?.refreshList()
+                    let updated = self.presenter?.todoArray.filter { $0.todo != item.todo }
+                    self.presenter?.todoArray = updated ?? []
+                    self.presenter?.updatePersistense()
+                    let hudView = DeleteHud.hud(inView: self.view, animated: true)
+                    hudView.text = Constants.String.deleted
+                    afterDelay(2.0) {
+                        hudView.hide()
+                    }
+                    self.refreshList()
                 }
                 alert.addAction(delete)
-                self?.present(alert, animated: true)
+                self.present(alert, animated: true)
             },
             cancelBlock: nil,
             actionBlock: {

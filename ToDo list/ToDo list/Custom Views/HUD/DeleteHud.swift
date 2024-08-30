@@ -1,18 +1,18 @@
 //
-//  ErrorHud.swift
+//  DeleteHud.swift
 //  ToDo list
 //
-//  Created by Mikhail Ustyantsev on 26.08.2024.
+//  Created by Mikhail Ustyantsev on 30.08.2024.
 //
 
 import UIKit
 
-class ErrorHud: UIView {
+class DeleteHud: UIView {
     
     var text = ""
     
-    class func hud(inView view: UIView, animated: Bool) -> ErrorHud {
-        let hudView = ErrorHud(frame: view.bounds)
+    class func hud(inView view: UIView, animated: Bool) -> DeleteHud {
+        let hudView = DeleteHud(frame: view.bounds)
         hudView.isOpaque = false
         view.addSubview(hudView)
         view.isUserInteractionEnabled = false
@@ -36,11 +36,11 @@ class ErrorHud: UIView {
             roundedRect: boxRect,
             cornerRadius: 10)
         
-        UIColor(white: 0.3, alpha: 0.5).setFill()
+        UIColor(white: 0.4, alpha: 1.0).setFill()
         roundedRect.fill()
         
         
-        if let image = UIImage(named: "error")?.withTintColor(.yellow) {
+        if let image = UIImage(named: "delete") {
             let imagePoint = CGPoint(
                 x: center.x - round(image.size.width / 2
                                    ),

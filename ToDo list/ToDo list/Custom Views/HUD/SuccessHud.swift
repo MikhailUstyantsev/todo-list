@@ -40,7 +40,7 @@ class SuccessHud: UIView {
         roundedRect.fill()
         
         
-        if let image = UIImage(systemName: "checkmark")?.withTintColor(.white) {
+        if let image = UIImage(named: "success")?.withTintColor(.systemGreen) {
             let imagePoint = CGPoint(
                 x: center.x - round(image.size.width / 2
                                    ),

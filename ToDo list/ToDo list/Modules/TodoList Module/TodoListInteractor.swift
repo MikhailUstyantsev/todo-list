@@ -28,7 +28,7 @@ class TodoListInteractor: PresenterToInteractorTodoListProtocol {
             guard let url = URL(string: Constants.API.todosApiString) else {
                 return
             }
-
+            
             Task {
                 let tasks = try? await NetworkManager.shared.retrieveTasks(from: url)
                 guard let tasks else { return }
@@ -41,8 +41,8 @@ class TodoListInteractor: PresenterToInteractorTodoListProtocol {
             self.presenter?.todoListFetchedSuccess(todoListModelArray: todosArray)
             presenter?.hideLoader()
         } else {
-            self.presenter?.todoListFetchFailed()
             presenter?.hideLoader()
+            self.presenter?.todoListFetchFailed()
         }
     }
     
