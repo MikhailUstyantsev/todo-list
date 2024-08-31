@@ -11,6 +11,21 @@ import Lottie
 
 class TodoListViewController: UIViewController {
     
+    private static var allInstances = 0
+    private var instance: Int
+    
+    init() {
+        TodoListViewController.allInstances += 1
+        instance = TodoListViewController.allInstances
+        print("TodoListViewController.init() #\(instance)")
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        NSCoder.fatalErrorNotImplemented()
+    }
+   
+    
     enum Section {
         case main
     }
